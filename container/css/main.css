@@ -1,0 +1,15 @@
+.lien-menu {
+    color: white;
+}
+.lien-menu:hover {
+    border-bottom: 2px solid white;
+}
+h2, h3, blockquote, #about, #auteur {
+    font-family: 'Architects Daughter', cursive;
+}
+#auteur {
+    text-decoration: underline;
+}
+body {
+    background-color: #eeeeee;
+}

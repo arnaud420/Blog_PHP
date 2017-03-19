@@ -1,0 +1,17 @@
+RewriteEngine On
+
+## Partie article ##
+RewriteRule ^article-([0-9]+).html$   articles.php?article=$1 [L]
+   
+## index ##
+RewriteRule ^index.html$   index.php [L]
+RewriteRule ^page-([0-9]+).html$   index.php?page=$1 [L]
+
+## pages membres ##
+RewriteRule ^connexion.html$   membres/connexion.php [L]
+RewriteRule ^connexion-post.html$   controller/connexion_post.php [L]
+RewriteRule ^connexion-reussi.html$   view/connecte.php [L]
+
+RewriteRule ^inscription.html$   membres/inscription.php [L]
+RewriteRule ^inscription-post.html$   controller/inscription_post.php [L]
+RewriteRule ^inscription-reussi.html$   view/inscription_reussi.php [L]
