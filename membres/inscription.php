@@ -12,6 +12,8 @@ session_start();
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Page d'inscription</title>
 </head>
 <body>
 <?php
