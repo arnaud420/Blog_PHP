@@ -36,7 +36,7 @@ require "model/load.php";
                 <div class="card-stacked">
                     <div class="card-content">
                         <div class="card-title flow-text" id="auteur">A propos de l'auteur :</div>
-                        <blockquote style="border-left-color: #00b8d4" class="cyan-text text-accent-4 flow-text">Vestibulum et tincidunt quam. Suspendisse vehicula diam quis eros ullamcorper, in finibus metus tempus. Sed euismod nisl ut tellus molestie, ac commodo ante congue. Mauris interdum nec orci eu imperdiet. Aliquam ac aliquam purus. Nulla facilisi. Cras luctus neque non quam volutpat malesuada.</blockquote>
+                        <blockquote style="border-left-color: #00b8d4" class="cyan-text text-accent-4 flow-text">Vestibulum et tincidunt quam. Suspendisse vehicula diam quis eros ullamcorper, in finibus metus tempus. Sed euismod nisl ut tellus molestie, ac commodo ante congue. Mauris interdum nec orci eu imperdiet. Aliquam ac aliquam purus.</blockquote>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ require "model/load.php";
                 <li>
                     <div class="collapsible-header flow-text"><i class="material-icons">mood</i>A propos de l'auteur</div>
                     <div class="collapsible-body white">
-                        <blockquote style="border-left-color: #00b8d4" class="cyan-text text-accent-4 flow-text">Vestibulum et tincidunt quam. Suspendisse vehicula diam quis eros ullamcorper, in finibus metus tempus. Sed euismod nisl ut tellus molestie, ac commodo ante congue. Mauris interdum nec orci eu imperdiet. Aliquam ac aliquam purus. Nulla facilisi. Cras luctus neque non quam volutpat malesuada.</blockquote>
+                        <blockquote style="border-left-color: #00b8d4" class="cyan-text text-accent-4 flow-text">Vestibulum et tincidunt quam. Suspendisse vehicula diam quis eros ullamcorper, in finibus metus tempus. Sed euismod nisl ut tellus molestie, ac commodo ante congue. Mauris interdum nec orci eu imperdiet. Aliquam ac aliquam purus.</blockquote>
                     </div>
                 </li>
             </ul>
@@ -150,7 +150,7 @@ require "model/load.php";
         </ul>
     </div>
     <div class="row">
-        <a class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%;" href="#header"><i class="material-icons">arrow_upward</i></a>
+        <a class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%;" href="#"><i class="material-icons">arrow_upward</i></a>
     </div>
 </div>
 

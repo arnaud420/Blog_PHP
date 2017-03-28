@@ -1,1 +1,1 @@
-<h2 id="erreur">Erreur</h2>
+<p id="erreur">Erreur 404 page introuvable</p>
