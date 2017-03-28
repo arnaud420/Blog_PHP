@@ -13,3 +13,6 @@ h2, h3, blockquote, #about, #auteur {
 body {
     background-color: #eeeeee;
 }
+#erreur {
+    text-align: center;
+}

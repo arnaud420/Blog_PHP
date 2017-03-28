@@ -9,7 +9,7 @@ $req->execute(array(
 ));
 $pseudo = $req->fetch();
 
-if (strtolower(htmlspecialchars($_POST['pseudo'])) == (htmlspecialchars(strtolower($pseudo['pseudo']))))
+if (strtolower(htmlspecialchars($_POST['pseudo'])) == (htmlspecialchars(strtolower($pseudo['pseudo'])))) //vérifie si le pseudo existe deja dans la bdd
 {
     ?> <h3 style='text-align: center'>Ce nom d'utilisateur est déjà utilisé.</h3>
     <a href="inscription.html">Revenir à la page d'inscription</a>

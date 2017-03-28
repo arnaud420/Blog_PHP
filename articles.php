@@ -25,30 +25,39 @@ require "view/header.php";
 require "model/load.php";
 
 $req = $bdd->prepare('SELECT id, titre, image, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') date_creation_fr FROM billets WHERE id = ?');
-$req->execute(array($_GET['article']));
+$req->execute(array($_GET['article'])); //récupére l'id du billet via l'url
 $donnees = $req->fetch();
-?>
-<!--recuperer les articles-->
-<div class="container section">
-    <div class="row">
-        <div class="col s12">
-            <div class="card hoverable">
-                <h2 class="center section"><?php echo htmlspecialchars($donnees['titre']); ?></h2>
-                <div class="card-image">
-                    <?php echo '<img src="container/image/' . $donnees['image'] . '">'; ?>
-                </div>
-                <div class="card-content">
-                    <p class="flow-text">
-                        <?php echo wordwrap(htmlspecialchars($donnees['contenu']), 800, "," . '</br>', true); //wordrap permet le retour à la ligne ?>
-                    </p>
-                </div>
-                <div class="card-action">
-                    <a href="index.html">Revenir à la liste d'article</a>
-                    <em class="right">posté le <?php echo htmlspecialchars($donnees['date_creation_fr']); ?></em>
+    if (empty($donnees)) // si il n'y à pas d'article retourne une erreur
+        {
+          return require 'view/erreur.php';
+        }
+    else //sinon recupere les articles
+        {
+        ?>
+    <!--affichage des articles-->
+        <div class="container section">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card hoverable">
+                        <h2 class="center section"><?php echo htmlspecialchars($donnees['titre']); ?></h2>
+                        <div class="card-image">
+                            <?php echo '<img src="container/image/' . $donnees['image'] . '">'; ?>
+                        </div>
+                        <div class="card-content">
+                            <p class="flow-text">
+                                <?php echo nl2br(htmlspecialchars($donnees['contenu']));
+                                ?>
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="index.html">Revenir à la liste d'article</a>
+                            <em class="right">posté le <?php echo htmlspecialchars($donnees['date_creation_fr']); ?></em>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <?php
+        } ?>
 
     <!--ajout de commentaires-->
     <h3 class="section">Ajoute ton commentaire :</h3>
@@ -60,7 +69,7 @@ $donnees = $req->fetch();
                     echo '<label for="commentaire">Commentaire</label>  <textarea name="commentaire" type="text" id="commentaire" class="materialize-textarea"></textarea>';
                 }
                 else {
-                    echo '<label for="commentaire">Connecte toi pour poster ton commentaire</label>  <textarea name="commentaire" type="text" id="commentaire" class="materialize-textarea"></textarea>';
+                    echo '<label for="commentaire">Connecte toi pour poster ton commentaire</label>  <textarea name="commentaire" type="text" id="commentaire" class="materialize-textarea" disabled="true"></textarea>';
                 }
                 ?>
             </div>
@@ -74,6 +83,7 @@ $donnees = $req->fetch();
     <div class="row">
         <div class="col s10 offset-s1">
             <h4><i class="material-icons prefix small left">mode_edit</i>Commentaires :</h4>
+
             <?php
             // recuperer les commentaires
             $req = $bdd->prepare('SELECT id, id_billet, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') date_creation_fr FROM commentaires WHERE id_billet = ? ORDER BY date_commentaire DESC');
@@ -83,7 +93,7 @@ $donnees = $req->fetch();
             <div class="card-panel teal">
                 <p class="white-text"><strong><?php echo htmlspecialchars($donnees['auteur']) . " " . "le " . htmlspecialchars($donnees['date_creation_fr']); ?></strong></p>
                 <p class="white-text"><i class="tiny material-icons left">play_arrow</i>
-                    <?php echo htmlspecialchars($donnees['commentaire']); ?>
+                    <?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?>
                 </p>
             </div>
                 <?php

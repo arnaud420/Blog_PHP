@@ -109,6 +109,13 @@ require "model/load.php";
         ?>
     </div>
 
+    <?php
+        if ($page > $nombrePages) //si la page n'existe pas retourne une erreur
+        {
+            return require ('view/erreur.php');
+        }
+    ?>
+
     <!--affichage de la pagination-->
     <div class="row center">
         <ul class="pagination">
@@ -143,17 +150,13 @@ require "model/load.php";
         </ul>
     </div>
     <div class="row">
-        <a class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%;" href="#"><i class="material-icons">arrow_upward</i></a>
+        <a class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%;" href="#header"><i class="material-icons">arrow_upward</i></a>
     </div>
 </div>
-
 
 <?php
 require "view/footer.php";
 ?>
-
-
-
 
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
