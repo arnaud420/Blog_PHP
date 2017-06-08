@@ -150,7 +150,7 @@ require "model/load.php";
         </ul>
     </div>
     <div class="row">
-        <a class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%;" href="#"><i class="material-icons">arrow_upward</i></a>
+        <span id="arrow-up-i" class="cyan accent-4 btn-floating btn-medium waves-effect waves-light hide-on-small-only hide-on-med-only" style="position: fixed; bottom: 1%; right: 10%; display: none;"><i class="material-icons">arrow_upward</i></span>
     </div>
 </div>
 
